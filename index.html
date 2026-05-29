@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TukunTech | IoT Health Monitoring</title>
+
+  <meta name="description"
+    content="TukunTech es una plataforma IoT de monitoreo preventivo de salud para frecuencia cardíaca, saturación de oxígeno, alertas, historial y acompañamiento de cuidadores." />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="shortcut icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container-page nav-wrapper">
+      <button class="brand" data-scroll="hero" aria-label="TukunTech home">
+        <img src="assets/logo.png" alt="Logo TukunTech" class="brand-logo" />
+        <span>TukunTech</span>
+      </button>
+
+      <nav class="desktop-nav" id="desktopNav"></nav>
+
+      <div class="nav-actions">
+        <div class="language-switch desktop-lang">
+          <button class="lang-option active" data-lang="es">ES</button>
+          <button class="lang-option" data-lang="en">EN</button>
+        </div>
+
+        <a class="app-button" href="https://tukuntech-front.netlify.app/" target="_blank" rel="noopener noreferrer"
+          data-i18n="nav.goApp">
+          Ir a la app
+        </a>
+
+        <button class="menu-button" id="menuButton" aria-label="Abrir menú">
+          <svg class="menu-open" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="container-page mobile-menu-inner">
+        <nav id="mobileNav"></nav>
+
+        <div class="mobile-bottom">
+          <button class="mobile-lang active" data-lang="es">ES</button>
+          <button class="mobile-lang" data-lang="en">EN</button>
+
+          <a class="mobile-app-button" href="https://tukuntech-front.netlify.app/" target="_blank"
+            rel="noopener noreferrer" data-i18n="nav.goApp">
+            Ir a la app
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section gradient-hero">
+      <div class="hero-blob hero-blob-one"></div>
+      <div class="hero-blob hero-blob-two"></div>
+
+      <div class="container-page hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2 14.7 8.6 22 12l-7.3 3.4L12 22l-2.7-6.6L2 12l7.3-3.4L12 2z" />
+            </svg>
+            <span data-i18n="hero.badge">Salud preventiva con IoT</span>
+          </span>
+
+          <h1 data-i18n="hero.title">Cuida lo que más te importa</h1>
+
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            Monitorea la salud de tus seres queridos en tiempo real con tecnología IoT.
+          </p>
+
+          <p class="hero-support" data-i18n="hero.support">
+            TukunTech conecta un dispositivo portátil con aplicaciones web y móviles para visualizar frecuencia
+            cardíaca, saturación de oxígeno, alertas preventivas e historial de mediciones.
+          </p>
+
+          <div class="hero-buttons">
+            <button class="primary-button" data-scroll="product">
+              <span data-i18n="hero.ctaPrimary">Conocer el producto</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <button class="secondary-button" data-scroll="contact">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+              </svg>
+              <span data-i18n="hero.ctaSecondary">Contactar</span>
+            </button>
+          </div>
+
+          <div class="hero-feature-grid" id="heroFeatures"></div>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="hero-image-card">
+            <img src="assets/img_Hero.png"
+              alt="Persona adulta mayor usando un dispositivo IoT de salud con acompañamiento familiar"
+              class="landing-image" />
+          </figure>
+
+          <div class="hero-mockup">
+            <div class="dashboard-card">
+              <div class="dashboard-top">
+                <div class="patient-box">
+                  <div class="patient-avatar">CM</div>
+                  <div>
+                    <p data-i18n="hero.mock.title">Panel del paciente</p>
+                    <span data-i18n="hero.mock.patient">Carlos M. · 72 años</span>
+                  </div>
+                </div>
+
+                <span class="live-pill">
+                  <span></span>
+                  <b data-i18n="hero.mock.live">En vivo</b>
+                </span>
+              </div>
+
+              <div class="vital-grid">
+                <div class="vital-card">
+                  <div class="vital-label">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                    </svg>
+                    <span data-i18n="hero.mock.hr">Frecuencia cardíaca</span>
+                  </div>
+                  <p><span id="heartRate">78</span><span>bpm</span></p>
+                </div>
+
+                <div class="vital-card">
+                  <div class="vital-label">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M22 12h-4l-3 8L9 4l-3 8H2" />
+                    </svg>
+                    <span data-i18n="hero.mock.spo2">Saturación O₂</span>
+                  </div>
+                  <p><span id="spo2">97</span><span>%</span></p>
+                </div>
+              </div>
+
+              <div class="status-card">
+                <div class="status-left">
+                  <span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3z" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </span>
+                  <div>
+                    <p data-i18n="hero.mock.status">Estado</p>
+                    <small data-i18n="hero.mock.stable">Estable</small>
+                  </div>
+                </div>
+                <b>OK</b>
+              </div>
+
+              <svg viewBox="0 0 280 60" class="sparkline">
+                <defs>
+                  <linearGradient id="sparkGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#4FAE9F" stop-opacity="0.4" />
+                    <stop offset="100%" stop-color="#4FAE9F" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M0,40 L20,38 L40,32 L60,35 L80,20 L100,28 L120,22 L140,30 L160,18 L180,26 L200,15 L220,22 L240,18 L260,25 L280,20 L280,60 L0,60 Z"
+                  fill="url(#sparkGradient)" />
+                <path
+                  d="M0,40 L20,38 L40,32 L60,35 L80,20 L100,28 L120,22 L140,30 L160,18 L180,26 L200,15 L220,22 L240,18 L260,25 L280,20" />
+              </svg>
+            </div>
+
+            <div class="floating-alert">
+              <span>
+                <svg viewBox="0 0 24 24">
+                  <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7" />
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                </svg>
+              </span>
+              <p data-i18n="hero.mock.alert">Alerta enviada al cuidador</p>
+            </div>
+
+            <div class="floating-heart">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+              </svg>
+              <span id="stabilityText">+12% estabilidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product" class="section bg-background">
+      <div class="container-page">
+        <div class="section-heading left">
+          <span class="eyebrow" data-label-es="El producto" data-label-en="The product">El producto</span>
+          <h2 data-i18n="product.title">Una solución conectada para el cuidado preventivo</h2>
+          <p data-i18n="product.text">
+            TukunTech integra un dispositivo IoT, una plataforma web y una aplicación móvil para facilitar el monitoreo
+            preventivo de signos vitales.
+          </p>
+        </div>
+
+        <div class="image-showcase-grid">
+          <figure class="showcase-card">
+            <img src="assets/img_Dispositivo.png" alt="Dispositivo portátil IoT" class="landing-image" />
+          </figure>
+
+          <figure class="showcase-card">
+            <img src="assets/img_App.png" alt="Dashboard web y móvil de TukunTech" class="landing-image" />
+          </figure>
+
+          <figure class="showcase-card">
+            <img src="assets/img_Alertas.png" alt="Alertas preventivas de salud" class="landing-image" />
+          </figure>
+        </div>
+
+        <div class="card-grid three" id="productCards"></div>
+      </div>
+    </section>
+
+    <section id="services" class="section gradient-soft">
+      <div class="container-page">
+        <div class="section-heading center">
+          <span class="eyebrow" data-label-es="Servicios" data-label-en="Services">Servicios</span>
+          <h2 data-i18n="services.title">Servicios principales</h2>
+          <p data-i18n="services.subtitle">Todo lo que necesitas para un monitoreo preventivo confiable.</p>
+        </div>
+
+        <div class="card-grid three" id="serviceCards"></div>
+      </div>
+    </section>
+
+    <section id="how" class="section bg-background">
+      <div class="container-page">
+        <div class="section-heading center">
+          <span class="eyebrow" data-label-es="Proceso" data-label-en="Process">Proceso</span>
+          <h2 data-i18n="how.title">¿Cómo funciona TukunTech?</h2>
+          <p data-i18n="how.subtitle">Seis pasos simples para acompañar la salud de tu familia.</p>
+        </div>
+
+        <figure class="process-image-wrap">
+          <img src="assets/img_Proceso.png" alt="Proceso IoT de TukunTech" class="landing-image process-image" />
+        </figure>
+
+        <div class="steps-wrap">
+          <div class="steps-line"></div>
+          <ol class="steps-grid" id="stepsGrid"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans" class="section gradient-soft">
+      <div class="container-page">
+        <div class="section-heading center">
+          <span class="eyebrow" data-label-es="Precios" data-label-en="Pricing">Precios</span>
+          <h2 data-i18n="plans.title">Planes diseñados para cada necesidad</h2>
+          <p data-i18n="plans.subtitle">Elige el plan que mejor se adapte a ti y a tu familia.</p>
+        </div>
+
+        <div class="plans-grid" id="plansGrid"></div>
+      </div>
+    </section>
+
+    <section id="mission" class="section bg-background">
+      <div class="container-page">
+        <div class="section-heading center">
+          <span class="eyebrow" data-label-es="Quiénes somos" data-label-en="Who we are">Quiénes somos</span>
+          <h2 data-i18n="mv.title">Misión y Visión</h2>
+        </div>
+
+        <div class="mission-grid" id="missionGrid"></div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section gradient-soft">
+      <div class="container-page">
+        <div class="section-heading center">
+          <span class="eyebrow" data-label-es="Testimonios" data-label-en="Testimonials">Testimonios</span>
+          <h2 data-i18n="testimonials.title">Historias de confianza</h2>
+          <p data-i18n="testimonials.subtitle">Lo que dicen pacientes, familiares y cuidadores que usan TukunTech.</p>
+        </div>
+
+        <div class="card-grid three" id="testimonialCards"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section bg-background">
+      <div class="container-page narrow">
+        <div class="section-heading center faq-heading">
+          <span class="eyebrow">FAQ</span>
+          <h2 data-i18n="faq.title">Preguntas frecuentes</h2>
+        </div>
+
+        <div class="faq-list" id="faqList"></div>
+
+        <div class="faq-cta">
+          <button class="primary-button" data-scroll="contact" data-i18n="faq.cta">
+            ¿Aún tienes dudas? Contáctanos
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section gradient-soft">
+      <div class="container-page">
+        <div class="section-heading center">
+          <span class="eyebrow" data-label-es="Equipo" data-label-en="Team">Equipo</span>
+          <h2 data-i18n="team.title">Nuestro equipo</h2>
+          <p data-i18n="team.intro">
+            Somos un equipo comprometido con el desarrollo de soluciones tecnológicas.
+          </p>
+        </div>
+
+        <div class="team-grid" id="teamGrid"></div>
+      </div>
+    </section>
+
+    <section id="video" class="section bg-background">
+      <div class="container-page video-container">
+        <div class="section-heading center">
+          <span class="eyebrow">Video</span>
+          <h2 data-i18n="video.title">Video sobre el equipo</h2>
+          <p data-i18n="video.text">
+            Conoce al equipo detrás de TukunTech y cómo trabajamos para desarrollar una solución de monitoreo de salud
+            basada en tecnología IoT.
+          </p>
+        </div>
+
+        <div class="video-box video-fallback">
+          <iframe src="https://www.youtube.com/embed/__45dTjz2U8?rel=0" title="TukunTech team video" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="video-link-wrap">
+          <a href="https://www.youtube.com/watch?v=__45dTjz2U8" target="_blank" rel="noopener noreferrer"
+            class="primary-button">
+            Ver video en YouTube
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section gradient-soft">
+      <div class="container-page">
+        <div class="section-heading center">
+          <span class="eyebrow" data-label-es="Contacto" data-label-en="Contact">Contacto</span>
+          <h2 data-i18n="contact.title">Contáctanos</h2>
+          <p data-i18n="contact.subtitle">
+            Déjanos tus datos y nuestro equipo se comunicará contigo para brindarte más información.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="contact-info-card">
+            <div class="contact-glow"></div>
+
+            <h3 data-i18n="contact.info">Información de contacto</h3>
+
+            <p data-i18n="contact.supportMsg">
+              Estamos disponibles para resolver dudas sobre planes, funcionamiento del dispositivo, acceso a la app y
+              soporte general.
+            </p>
+
+            <ul>
+              <li>
+                <span>✉</span>
+                <div>
+                  <small data-i18n="contact.emailLabel">Correo</small>
+                  <a href="mailto:info@tukuntech.pe">info@tukuntech.pe</a>
+                </div>
+              </li>
+
+              <li>
+                <span>☎</span>
+                <div>
+                  <small data-i18n="contact.phoneLabel">Teléfono</small>
+                  <a href="tel:+51999999999">+51 999 999 999</a>
+                </div>
+              </li>
+
+              <li>
+                <span>◷</span>
+                <div>
+                  <small data-i18n="contact.hoursLabel">Horario de atención</small>
+                  <b data-i18n="contact.hours">Lunes a viernes, 9:00 a.m. - 6:00 p.m.</b>
+                </div>
+              </li>
+            </ul>
+          </aside>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="success-box" id="successBox">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <path d="m9 11 3 3L22 4" />
+              </svg>
+              <p data-i18n="contact.success">
+                ¡Gracias! Hemos recibido tu solicitud y nos comunicaremos contigo pronto.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <label>
+                <span data-i18n="contact.fields.firstName">Nombre</span>
+                <input type="text" id="firstName" />
+                <small class="error-message"></small>
+              </label>
+
+              <label>
+                <span data-i18n="contact.fields.lastName">Apellido</span>
+                <input type="text" id="lastName" />
+                <small class="error-message"></small>
+              </label>
+
+              <label>
+                <span data-i18n="contact.fields.email">Correo electrónico</span>
+                <input type="email" id="email" />
+                <small class="error-message"></small>
+              </label>
+
+              <label>
+                <span data-i18n="contact.fields.phone">Celular</span>
+                <input type="tel" id="phone" />
+                <small class="error-message"></small>
+              </label>
+
+              <label class="full">
+                <span data-i18n="contact.fields.topic">Tema</span>
+                <select id="topic">
+                  <option value="">—</option>
+                  <option value="info" data-i18n="contact.topics.info">Información</option>
+                  <option value="individual" data-i18n="contact.topics.individual">Plan individual</option>
+                  <option value="family" data-i18n="contact.topics.family">Plan familiar</option>
+                  <option value="support" data-i18n="contact.topics.support">Soporte</option>
+                  <option value="other" data-i18n="contact.topics.other">Otros</option>
+                </select>
+                <small class="error-message"></small>
+              </label>
+
+              <label class="full">
+                <span data-i18n="contact.fields.message">Mensaje</span>
+                <textarea id="message" rows="4"></textarea>
+                <small class="error-message"></small>
+              </label>
+            </div>
+
+            <button type="submit" class="primary-button submit-button">
+              <svg viewBox="0 0 24 24">
+                <path d="m22 2-7 20-4-9-9-4 20-7z" />
+                <path d="M22 2 11 13" />
+              </svg>
+              <span data-i18n="contact.submit">Enviar solicitud</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer gradient-dark">
+    <div class="container-page">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="Logo TukunTech" class="brand-logo footer-brand-logo" />
+            <span>TukunTech</span>
+          </div>
+
+          <p data-i18n="footer.desc">
+            TukunTech es una solución de monitoreo preventivo de salud basada en IoT.
+          </p>
+
+          <div class="social-area">
+            <p data-i18n="footer.social">Redes sociales</p>
+            <div>
+              <span>in</span>
+              <span>◎</span>
+              <span>f</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <p data-i18n="footer.nav">Navegación</p>
+          <ul id="footerNav"></ul>
+        </div>
+
+        <div class="footer-contact">
+          <p data-i18n="footer.contact">Contacto</p>
+          <ul>
+            <li>✉ <a href="mailto:info@tukuntech.pe">info@tukuntech.pe</a></li>
+            <li>☎ +51 999 999 999</li>
+            <li>◷ <span data-i18n="contact.hours">Lunes a viernes, 9:00 a.m. - 6:00 p.m.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="medical-warning">
+        <strong id="medicalTitle">⚕ Aviso médico:</strong>
+        <span data-i18n="footer.disclaimer">
+          TukunTech es una herramienta de monitoreo preventivo y acompañamiento. No reemplaza el diagnóstico médico, la
+          atención profesional ni los servicios de emergencia.
+        </span>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.rights">© 2026 TukunTech. Todos los derechos reservados.</p>
+        <p>Made with care · Health-tech IoT</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
