@@ -161,10 +161,10 @@ const translations = {
     items: [
       {
         name: { es: "Plan Individual", en: "Individual Plan" },
-        price: "$200",
+        price: "$90",
         note: {
-          es: "+ $10 dólares por mes",
-          en: "+ $10 dollars per month"
+          es: "+ $15 dólares por mes",
+          en: "+ $15 dollars per month"
         },
         featured: false,
         features: {
@@ -184,7 +184,7 @@ const translations = {
       },
       {
         name: { es: "Plan Familiar", en: "Family Plan" },
-        price: "Desde $500",
+        price: "Desde $170",
         note: {
           es: "Precio base del plan familiar",
           en: "Base price for the family plan"
