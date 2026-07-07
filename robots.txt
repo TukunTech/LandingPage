@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tukuntech.netlify.app/sitemap.xml
+Sitemap: https://tukuntech.github.io/LandingPage/sitemap.xml
